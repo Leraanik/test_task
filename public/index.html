@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav">
+        <img src="images/Logo.png" alt="Логотип компании" class="nav_logo">
+        <ul class="nav_navigation">
+            <div class="nav_block nav_active">
+                <li class="nav_list"><a class="nav_navigation-list nav_navigation-list_active" href="main.html">Главная</li>
+            </div>
+            <div class="nav_block">
+                <li class="nav_list"><a class="nav_navigation-list" href="analytics.html">Аналитика</li>
+            </div>
+            
+        </ul>
+        <img src="images/User.png" alt="Профиль" class="nav_profile">
+    </nav>
+
+    <main >
+        <div class="block_info">
+            <form action="" class="form-container">
+                <input  class="info_form" type="text" placeholder="Поиск прибора в Botanique по номеру, названию, подразделению и др.">
+                <button class="form_btn">
+                    <img src="images/qr_code_scanner-24px.png" alt="QR-код">
+                </button>
+            </form>
+    
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img class="modal-image" src="images/qr_code_scanner-24px.png" alt="QR-код">
+                </div>
+            </div>
+    
+            <div class="favorite">
+                <div class="favorite_title">
+                    <img  class="favorite_logo" src="images/favorite.svg" alt="Логотип сердца">
+                    <p class="favorite_text">Любимые приборы</p>
+                </div>
+    
+                <div class="favorite_table">
+                    <div class="favorite_header">
+                        <p class="favorite_name">Название</p>
+                        <p class="favorite_status">Статус</p>
+                    </div>
+                    
+                
+                <ul class="favorite_list">
+                    <div class="favorite_spisok">
+                        <img src="images/pH.svg" alt="PH" class="favorite_img">
+                        <p class="favorite_txt">pH-метр Mettler-Toledo International, Inc. SevenCompact S220</p>
+                        <button  id="btn_favorite" onclick="toggleText(event, this)">
+                            <p class="btn_favorite-text" id="favorite-text">Свободен</p>
+                            <svg class="btn_svg" width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.166656 0.666626L3.49999 3.99996L6.83332 0.666626H0.166656Z" fill="black" fill-opacity="0.6" />
+                              </svg>
+                        </button>
+
+                        <button class="favorite_notice" onclick="toggleImage(event, this)">
+                            <img src="images/notifirst.png" alt="Активный режим" class="notice">
+                            <img src="images/notisecond.png" alt="Нейтральный режим" class="notice" style="display: none;">
+                            <img src="images/notitree.png" alt="Выключенный режим" class="notice" style="display: none;">
+                        </button>
+                    </div>
+
+                    <div class="favorite_spisok">
+                        <img src="images/spectr.svg" alt="Спектрофотометр" class="favorite_img">
+                        <p class="favorite_ttx">Спектрофотометр Varian, Inc Cary 50 Bio</p>
+                        <button  id="btn_second" onclick="toggleText(event, this)">
+                            <p class="btn_favorite-text" id="favorite-text">Свободен</p>
+                            <svg class="btn_svg" width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.166656 0.666626L3.49999 3.99996L6.83332 0.666626H0.166656Z" fill="black" fill-opacity="0.6" />
+                              </svg>
+                        </button>
+
+                        <button class="favorite_notice" onclick="toggleImage(event, this)">
+                            <img src="images/notifirst.png" alt="Активный режим" class="notice">
+                            <img src="images/notisecond.png" alt="Нейтральный режим" class="notice" style="display: none;">
+                            <img src="images/notitree.png" alt="Выключенный режим" class="notice" style="display: none;">
+                        </button>
+                    </div>
+
+
+                    <div class="favorite_spisok">
+                        <img src="images/titrator.svg" alt="Титратор " class="favorite_img">
+                        <p class="favorite_ttx">Титратор </p>
+                        <button  id="btn_tree" onclick="toggleText(event, this)">
+                            <p class="btn_favorite-text" id="favorite-text">Свободен</p>
+                            <svg class="btn_svg" width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.166656 0.666626L3.49999 3.99996L6.83332 0.666626H0.166656Z" fill="black" fill-opacity="0.6" />
+                              </svg>
+                        </button>
+
+                        <button class="favorite_notice" onclick="toggleImage(event, this)">
+                            <img src="images/notifirst.png" alt="Активный режим" class="notice">
+                            <img src="images/notisecond.png" alt="Нейтральный режим" class="notice" style="display: none;">
+                            <img src="images/notitree.png" alt="Выключенный режим" class="notice" style="display: none;">
+                        </button>
+                    </div>
+
+
+                    <div class="favorite_spisok">
+                        <img src="images/kauglomenr.svg" alt="Коагулометр" class="favorite_img">
+                        <p class="favorite_ttx">Коагулометр Tcoag, KC 4 Delta</p>
+                        <button  id="btn_four" onclick="toggleText(event, this)">
+                            <p class="btn_favorite-text" id="favorite-text">Свободен</p>
+                            <svg class="btn_svg" width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.166656 0.666626L3.49999 3.99996L6.83332 0.666626H0.166656Z" fill="black" fill-opacity="0.6" />
+                              </svg>
+                        </button>
+
+                        <button class="favorite_notice" onclick="toggleImage(event, this)">
+                            <img src="images/notifirst.png" alt="Активный режим" class="notice">
+                            <img src="images/notisecond.png" alt="Нейтральный режим" class="notice" style="display: none;">
+                            <img src="images/notitree.png" alt="Выключенный режим" class="notice" style="display: none;">
+                        </button>
+                    </div>
+
+
+                    <div class="favorite_spisok">
+                        <img src="images/kauglomenr.svg" alt="Коагулометр" class="favorite_img">
+                        <p class="favorite_ttx">Коагулометр Tcoag, KC 4 Delta</p>
+                        <button  id="btn_four" onclick="toggleText(event, this)">
+                            <p class="btn_favorite-text" id="favorite-text">Свободен</p>
+                            <svg class="btn_svg" width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.166656 0.666626L3.49999 3.99996L6.83332 0.666626H0.166656Z" fill="black" fill-opacity="0.6" />
+                              </svg>
+                        </button>
+
+                        <button class="favorite_notice" onclick="toggleImage(event, this)">
+                            <img src="images/notifirst.png" alt="Активный режим" class="notice">
+                            <img src="images/notisecond.png" alt="Нейтральный режим" class="notice" style="display: none;">
+                            <img src="images/notitree.png" alt="Выключенный режим" class="notice" style="display: none;">
+                        </button>
+                    </div>
+                </ul>
+            </div>
+            </div>
+        </div>
+        
+
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>

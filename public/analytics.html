@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+    <nav class="nav">
+        <img src="images/Logo.png" alt="Логотип компании" class="nav_logo">
+        <ul class="nav_navigation">
+            <div class="nav_block">
+                <li class="nav_list"><a class="nav_navigation-list" href="main.html">Главная</li>
+            </div>
+            <div class="nav_block nav_active">
+                <li class="nav_list"><a class="nav_navigation-list nav_navigation-list_active" href="analytics.html">Аналитика</li>
+            </div>
+            
+        </ul>
+        <img src="images/User.png" alt="Профиль" class="nav_profile">
+    </nav>
+
+    <main class="block_info">
+        <div class="block_main">
+            <div class="block_first">
+                <img src="images/device.svg" alt="Неизвестный логотип" class="block_nknowmlogo">
+                <div class="block_first-title">
+                    <h1 class="block_heading">pH-метр Mettler-Toledo International, Inc. SevenCompact S220</h1>
+                    <p class="block_subtitle">S1.4.I14-9.001 · 00-024004</p>    
+                </div>
+                <button class="block_first-btn" onclick="changeText(event, this)">
+                    <p class="text_btn">В работе</p>
+                    <svg class="svgblock_first" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666687 0.666687L4.00002 4.00002L7.33335 0.666687H0.666687Z" fill="black" fill-opacity="0.6" />
+                      </svg>
+                </button>
+                <div class="button" id="svgButton">
+                    <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18.35L8.55 17.03C3.4 12.36 0 9.28 0 5.5C0 2.42 2.42 0 5.5 0C7.24 0 8.91 0.81 10 2.09C11.09 0.81 12.76 0 14.5 0C17.58 0 20 2.42 20 5.5C20 9.28 16.6 12.36 11.45 17.04L10 18.35Z" fill="#EE3F44" />
+                      </svg>
+                </div>
+                <button class="btn_settings">
+                    <img  class="settings" src="images/settings.svg">
+                </button>
+            </div>
+            <div class="block_second">
+                <div class="block_statusdevice">
+                    <p class="block_statusdevice-title">Работа прибора</p>
+                    <svg class="block_svg" width="10" height="5" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L5 5L10 0H0Z" fill="black" fill-opacity="0.87" />
+                      </svg>
+                </div>
+                
+                
+                <img  class="btn_alarm " src="images/btn.svg">
+                <button class="generate_btn" id="cmd">
+                    <p class="pdf_title" id="downloadBtn">Сохранить pdf</p>
+                    <svg width="1" height="24" viewBox="0 0 1 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" width="24" height="1" transform="rotate(90 1 0)" fill="#C2E7C8" />
+                      </svg>
+                      <svg  class="svg_point" width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4ZM2 6C0.9 6 0 6.9 0 8C0 9.1 0.9 10 2 10C3.1 10 4 9.1 4 8C4 6.9 3.1 6 2 6ZM2 12C0.9 12 0 12.9 0 14C0 15.1 0.9 16 2 16C3.1 16 4 15.1 4 14C4 12.9 3.1 12 2 12Z" fill="#23B04A" />
+                      </svg>
+                </button>
+            </div>
+            <div class="block_third">
+                <input class="block_date" type="datetime-local" value="2021-10-07T10:55" />
+                <img src="images/Icon.svg">
+                <input class="block_date" type="datetime-local" value="2021-10-21T10:55" />
+            </div>
+
+            <div class="block_four">
+                <div class="four_spisok">
+                    <button class="btn_btn btn_one">День</button>
+                    <button class="btn_btn btn_two">Неделя</button>
+                    <button class="btn_btn btn_tree">2 недели</button>
+                    <button class="btn_btn btn_four">Месяц</button>
+                    <button class="btn_btn btn_five">3 месяца</button>
+                    <button class="btn_btn btn_six">Полгода</button>
+                </div>
+            </div>
+            <div class="block_five">
+                <p class="title title_name">Начало</p>
+                <p class="title title_type">Тип работ</p>
+                <p class="title title_work">Работы</p>
+                <p class="title title_result">Результат</p>
+                <p class="title title_peron">Пользователь</p>
+            </div>
+            <div class="block_six">
+                <div>
+                    <input class="block_date-six" type="datetime-local" value="2021-10-09T15:46" />
+                </div>
+                <div class="text_type">
+                    <p class="text_header">В работе</p>
+                    <p class="text_task">Измерение</p>
+                </div>
+                <p class="block-six-work"><b>Образец/серия:</b> 000100057935_170000010325_0000251849</p>
+                <div class="block_empty-result">
+                    <div class="block_empty"></div>
+                    <img src="images/check.svg">
+                </div>
+                <p class="block-six-name">morozovava</p>
+            </div>
+            <div class="block_seven">
+                <div>
+                    <input class="block_date-six" type="datetime-local" value="2021-10-12T12:17" />
+                </div>
+                <div class="text_type">
+                    <p class="text_header">В работе</p>
+                    <p class="text_task">Калибровка</p>
+                </div>
+                <ul class="spisok_seven">
+                    <li class="spisok_list"><b>Номер колонки:</b> Колонка 2</li>
+                    <li class="spisok_list"><b>Образец:</b> Образец 2</li>
+                    <li class="spisok_list"><b>Метод:</b> метов тестовый</li>
+                    <li class="spisok_list"><b>Номер колонки:</b> Колонка 1</li>
+                </ul>
+                <div class="block_seven-result">
+                    <p class="block_result-txt">Промывка с<br>указанием<br>вещества:<br>Вещество<br>...</p>
+                    <img class="check_svg" src="images/check.svg">
+                </div>
+                <p class="block-six-name">morozovava</p>
+
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+    <script>
+        document.getElementById('cmd').addEventListener('click', function () {
+            const doc = new jsPDF();
+            doc.text("Содержимое PDF", 10, 10);
+            doc.save('download.pdf');
+        });
+        </script>
+</body>
+</html>
